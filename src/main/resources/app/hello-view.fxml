@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="866.0" prefWidth="1040.0" styleClass="panel" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller">
+    <top>
+        <BorderPane prefHeight="58.0" prefWidth="1040.0" BorderPane.alignment="CENTER">
+            <left>
+                <ImageView fx:id="menu" fitHeight="35.0" fitWidth="37.0" onMouseClicked="#spostaSlider" onMouseEntered="#cambiaIconaMenu" onMouseExited="#cambiaIconaMenu" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                    <image>
+                        <Image url="@../icons/Hamburger_iconB.png" />
+                    </image>
+                    <BorderPane.margin>
+                        <Insets left="30.0" />
+                    </BorderPane.margin>
+                </ImageView>
+            </left>
+            <right>
+                <FlowPane prefHeight="48.0" prefWidth="234.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button id="aiuto" fx:id="aiuto" mnemonicParsing="false" onAction="#pannelloAiuto" prefHeight="57.0" prefWidth="116.0" stylesheets="@../stylesheet.css" text="Aiuto" textAlignment="CENTER" textFill="#f1e2cc">
+                            <font>
+                                <Font name="Arial Black" size="23.0" />
+                            </font>
+                        </Button>
+                        <Button id="about" fx:id="about" mnemonicParsing="false" onAction="#pannelloAbout" prefHeight="56.0" prefWidth="110.0" stylesheets="@../stylesheet.css" text="About" textAlignment="CENTER" textFill="#f1e2cc">
+                            <font>
+                                <Font name="Arial Black" size="23.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <effect>
+                        <DropShadow height="16.96" radius="3.74" spread="0.23" width="0.0" />
+                    </effect>
+                </FlowPane>
+            </right>
+            <effect>
+                <DropShadow height="1.83" radius="0.0" spread="0.38" width="0.0" />
+            </effect>
+            <bottom>
+                <Pane prefHeight="1.0" prefWidth="1040.0" style="-fx-background-color: #0d0d0d;" BorderPane.alignment="CENTER">
+                    <effect>
+                        <Shadow height="1.46" radius="0.0" width="0.0" />
+                    </effect>
+                </Pane>
+            </bottom>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </BorderPane>
+    </top>
+    <left>
+        <StackPane prefHeight="802.0" prefWidth="234.0" styleClass="panel" stylesheets="@../stylesheet.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox fx:id="pannelloVersione" prefHeight="819.0" prefWidth="234.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="backArrow" contentDisplay="GRAPHIC_ONLY" disable="true" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="58.0" rotate="180.0" styleClass="backButton" stylesheets="@../stylesheet.css" visible="false">
+                            <graphic>
+                                <ImageView fitHeight="29.0" fitWidth="36.0">
+                                    <image>
+                                        <Image url="@../icons/freccia.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <HBox fx:id="numOfPlayersHBox" disable="true" layoutX="45.0" layoutY="60.0" prefHeight="28.0" prefWidth="194.0" spacing="10.0" visible="false">
+                            <children>
+                                <ChoiceBox fx:id="numOfPlayersChoiceBox" prefHeight="26.0" prefWidth="43.0" />
+                                <Label prefHeight="28.0" prefWidth="134.0" styleClass="choiceBox" text="Giocatori" />
+                            </children>
+                        </HBox>
+                        <HBox fx:id="rowHBox" disable="true" prefHeight="28.0" prefWidth="194.0" spacing="10.0" visible="false">
+                            <children>
+                                <ChoiceBox fx:id="rowChoiceBox" prefHeight="26.0" prefWidth="43.0" />
+                                <Label prefHeight="28.0" prefWidth="134.0" styleClass="choiceBox" text="Numero di righe" />
+                            </children>
+                        </HBox>
+                        <HBox fx:id="colHBox" disable="true" layoutX="50.0" layoutY="60.0" prefHeight="27.0" prefWidth="194.0" spacing="10.0" visible="false">
+                            <children>
+                                <ChoiceBox fx:id="colChoiceBox" prefHeight="26.0" prefWidth="42.0" />
+                                <Label prefHeight="27.0" prefWidth="138.0" styleClass="choiceBox" text="Numero di colonne" />
+                            </children>
+                        </HBox>
+                        <CheckBox fx:id="dadoSingoloCB" disable="true" graphicTextGap="0.0" mnemonicParsing="false" styleClass="checkBox" stylesheets="@../stylesheet.css" text="Dado singolo" visible="false">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </CheckBox>
+                        <CheckBox fx:id="doppioSeiCB" disable="true" mnemonicParsing="false" styleClass="checkBox" text="Doppio sei" visible="false" />
+                        <CheckBox fx:id="lancioFinaleCB" disable="true" mnemonicParsing="false" styleClass="checkBox" text="Lancio finale" visible="false" />
+                        <CheckBox fx:id="divietoDiSostaCB" disable="true" mnemonicParsing="false" styleClass="checkBox" stylesheets="@../stylesheet.css" text="Carta divieto di sosta" visible="false" />
+                    </children>
+                    <padding>
+                        <Insets left="30.0" top="30.0" />
+                    </padding>
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets></VBox>
+                <AnchorPane fx:id="slider" minWidth="0.0" prefHeight="802.0" prefWidth="234.0" styleClass="slider" stylesheets="@../stylesheet.css">
+                    <children>
+                        <Button id="salvata" fx:id="importa" graphicTextGap="20.0" layoutX="-1.0" layoutY="105.0" mnemonicParsing="false" onAction="#inserisciFile" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Importa da file">
+                            <font>
+                                <Font name="Arial" size="19.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="14.0" fitWidth="18.0">
+                                    <image>
+                                        <Image url="@../icons/freccia.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button id="personalizzata" fx:id="personalizza" graphicTextGap="20.0" layoutY="185.0" mnemonicParsing="false" onAction="#pannelloConfigurazione" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Personalizza">
+                            <font>
+                                <Font name="Arial" size="19.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../icons/paint.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets right="18.0" />
+                            </padding>
+                        </Button>
+                        <Button id="default" fx:id="defaultB" graphicTextGap="20.0" layoutX="-1.0" layoutY="265.0" mnemonicParsing="false" onAction="#pannelloDefault" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Default">
+                            <font>
+                                <Font name="Arial" size="19.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/board.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets right="63.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </StackPane>
+    </left>
+    <right>
+        <StackPane prefHeight="150.0" prefWidth="235.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea fx:id="textAreaSimul" disable="true" prefHeight="771.0" prefWidth="195.0" visible="false">
+                    <StackPane.margin>
+                        <Insets bottom="150.0" left="15.0" right="15.0" top="15.0" />
+                    </StackPane.margin></TextArea>
+                <VBox alignment="TOP_CENTER" prefHeight="802.0" prefWidth="235.0" spacing="40.0">
+                    <children>
+                        <Button fx:id="salva" disable="true" mnemonicParsing="false" onAction="#salva" styleClass="configButton" stylesheets="@../stylesheet.css" text="Salva" visible="false" />
+                        <TabPane fx:id="tabPane" disable="true" prefHeight="441.0" prefWidth="205.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+                            <tabs>
+                                <Tab>
+                                    <graphic>
+                                        <ImageView fitHeight="19.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../icons/snakeF.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <content>
+                                        <AnchorPane prefHeight="399.0" prefWidth="205.0">
+                                            <children>
+                                                <ImageView fitHeight="129.0" fitWidth="70.0" layoutX="13.0" layoutY="20.0" onDragDetected="#creaSerpente1" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/serpe1.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="168.0" fitWidth="45.0" layoutX="30.0" layoutY="201.0" onDragDetected="#creaSerpente2" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/serpe2.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="142.0" fitWidth="78.0" layoutX="102.0" layoutY="244.0" onDragDetected="#creaSerpente3" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/serpe3.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="122.0" fitWidth="51.0" layoutX="131.0" layoutY="14.0" onDragDetected="#creaSerpente5" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/serpe5.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="100.0" fitWidth="94.0" layoutX="16.0" layoutY="101.0" onDragDetected="#creaSerpente4" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/serpe4.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="107.0" fitWidth="65.0" layoutX="124.0" layoutY="138.0" onDragDetected="#creaSerpente6" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/serpe6.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                                <Tab>
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="167.0" fitWidth="100.0" layoutX="30.0" layoutY="14.0" onDragDetected="#creaScala" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/scala1.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="165.0" fitWidth="76.0" layoutX="130.0" layoutY="16.0" onDragDetected="#creaScala" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/scala2.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="191.0" fitWidth="37.0" layoutX="30.0" layoutY="238.0" onDragDetected="#creaScala" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/scala3.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="106.0" fitWidth="37.0" layoutX="128.0" layoutY="269.0" onDragDetected="#creaScala" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/scala4.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                    <graphic>
+                                        <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../icons/ladder.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Tab>
+                                <Tab fx:id="tabellaSpeciali">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                            <children>
+                                                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="14.0" onDragDetected="#creaCasella" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/dadi.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="133.0" onDragDetected="#creaCasella" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/locanda.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="111.0" layoutY="127.0" onDragDetected="#creaCasella" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/molla.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="111.0" layoutY="14.0" onDragDetected="#creaCasella" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/panchina.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="242.0" onDragDetected="#creaCasella" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../icons/puntoInterrogativo.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../icons/starFilled.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                        <Slider fx:id="rotationSlider" disable="true" max="90.0" min="-90.0" visible="false" />
+                        <Button fx:id="simulazione" mnemonicParsing="false" onAction="#nextState" styleClass="configButton" stylesheets="@../stylesheet.css" text="Simulazione" />
+                    </children>
+                    <padding>
+                        <Insets left="15.0" right="15.0" top="30.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </StackPane>
+    </right>
+    <center>
+        <Group fx:id="gridGroup" BorderPane.alignment="CENTER" />
+    </center>
+</BorderPane>

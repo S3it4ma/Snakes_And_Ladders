@@ -1,0 +1,80 @@
+/*
+
+    public Memento save(Memento.TYPE type) {
+        return new Memento(type);
+    }
+
+    public void restore(Memento m) {
+        if (m.type == Memento.TYPE.GRID) {
+            this.getChildren().clear();
+            this.getChildren().addAll(m.group.getChildren());
+        }
+        else {
+            Node node = m.group.getChildren().get(0);
+            if (!this.getChildren().contains(node))
+                this.getChildren().add(node);
+            else {
+                node.setLayoutX(m.nodeCoordinates[0][m.X]);
+                node.setLayoutY(m.nodeCoordinates[0][m.Y]);
+                node.setRotate(m.nodeCoordinates[0][m.ANGLE]);
+            }
+        }
+    }
+
+     da fixare per l'array
+    public class Memento {
+        private Group group;
+        private double[][] nodeCoordinates;
+        private TYPE type;
+
+        public enum TYPE {GRID, ANCHORABLE};
+
+        private int X = 0, Y = 1, ANGLE = 2;
+
+        public Memento(TYPE t) {
+            int size = Board.this.getChildren().size();
+            group = new Group();
+            if (t==TYPE.GRID) {
+                group.getChildren().addAll(Board.this.getChildren());
+                if (size-1>0) saveBoard(size);
+            }
+            else saveAnchorable(size);
+        }
+
+        private void saveAnchorable(int size) {
+            if(size-1>0) {
+
+                Node n = Board.this.getChildren().get(size-1);
+                group.getChildren().add(n);
+
+                nodeCoordinates = new double[1][3];
+                nodeCoordinates[0][X] = n.getLayoutX();
+                nodeCoordinates[0][Y] = n.getLayoutY();
+                nodeCoordinates[0][ANGLE] = n.getRotate();
+            }
+        }
+
+        private void saveBoard(int size) {
+
+
+            nodeCoordinates = new double[size-1][3];
+            for(int i=1; i<size; i++) {
+                Node n = Board.this.getChildren().get(i);
+
+
+                nodeCoordinates[i][X] = n.getLayoutX();
+                nodeCoordinates[i][Y] = n.getLayoutY();
+                nodeCoordinates[i][ANGLE] = n.getRotate();
+            }
+        }
+    }*/
+
+
+
+        public boolean validate(Connector connector, double angle) {
+            double x =  connector.getSecondAnchor().getX(), y =  connector.getSecondAnchor().getY();
+
+            //System.out.println(x+" x, y "+y+" "+xRotated+" xR yR "+yRotated+" "+gridPane.contains(x, y));
+            return gridPane.contains(x+connector.getBoundsInParent().getMinX(),
+                    y+connector.getBoundsInParent().getMinY());
+        }
