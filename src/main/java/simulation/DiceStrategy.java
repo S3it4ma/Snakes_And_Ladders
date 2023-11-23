@@ -4,8 +4,12 @@ public class DiceStrategy implements HandleStrategy {
 
     @Override
     public void handle(Simulation simulation) {
-        String text = "Il giocatore "+simulation.getCurrentPlayer().getName()+" ritira i dadi";
-        simulation.show(text);
+        simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
         simulation.manageRoll(simulation.rollDice());
+    }
+
+    @Override
+    public String toString() {
+        return " ritira i dadi!";
     }
 }

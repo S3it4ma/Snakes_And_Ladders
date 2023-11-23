@@ -3,8 +3,12 @@ package simulation;
 public class RandomStrategy implements HandleStrategy {
     @Override
     public void handle(Simulation simulation) {
-        String text = "Il giocatore "+simulation.getCurrentPlayer().getName()+" ha raggiunto una casella incognita! Pesca una carta";
-        simulation.show(text);
+        simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
         ((DeckSimulation) simulation).getDeckCard();
+    }
+
+    @Override
+    public String toString() {
+        return " ha raggiunto una casella incognita! Pesca una carta...";
     }
 }

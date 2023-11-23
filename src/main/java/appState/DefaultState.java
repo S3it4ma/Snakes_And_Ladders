@@ -1,23 +1,29 @@
 package appState;
 
+import app.ErrorAlert;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import board.BoardHandler;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class DefaultState extends AppState {
-    private final BoardHandler boardHandler;
 
     public DefaultState(ArrayList<Node> nodes, BoardHandler bh) {
-        super(nodes);
-        this.boardHandler = bh;
+        super(nodes, bh);
         this.simulationButtonText = "Simulazione";
     }
 
     @Override
     protected void showBoard() {
-        boardHandler.createBoardFromFile("default.txt");
+        try {
+            boardHandler.createBoardFromFile(new File(System.getProperty("user.dir")+"\\src\\main\\resources\\app\\default.txt"));
+        } catch (Exception e) {
+            Alert errorAlert = new ErrorAlert(ErrorAlert.TYPE.WRONG_FORMAT);
+            errorAlert.showAndWait();
+        }
     }
 
 

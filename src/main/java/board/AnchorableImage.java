@@ -4,6 +4,8 @@ import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.net.URL;
+
 public class AnchorableImage extends ImageView {
     protected Point2D anchor;
     private boolean isAnchored;
@@ -67,6 +69,10 @@ public class AnchorableImage extends ImageView {
     @Override
     public String toString() {
         String string = this.getImage().getUrl();
-        return string.substring(string.lastIndexOf("/")+1, string.indexOf("."));
+
+        int index = string.lastIndexOf("\\");
+        int beginIndex = (index == -1)? string.lastIndexOf("/") : index;
+
+        return string.substring(beginIndex+1, string.indexOf("."));
     }
 }

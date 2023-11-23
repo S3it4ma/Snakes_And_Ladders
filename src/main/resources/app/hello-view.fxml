@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -39,12 +38,12 @@
             <right>
                 <FlowPane prefHeight="48.0" prefWidth="234.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Button id="aiuto" fx:id="aiuto" mnemonicParsing="false" onAction="#pannelloAiuto" prefHeight="57.0" prefWidth="116.0" stylesheets="@../stylesheet.css" text="Aiuto" textAlignment="CENTER" textFill="#f1e2cc">
+                        <Button id="aiuto" mnemonicParsing="false" onAction="#pannelloAiuto" prefHeight="57.0" prefWidth="116.0" stylesheets="@../stylesheet.css" text="Aiuto" textAlignment="CENTER" textFill="#f1e2cc">
                             <font>
                                 <Font name="Arial Black" size="23.0" />
                             </font>
                         </Button>
-                        <Button id="about" fx:id="about" mnemonicParsing="false" onAction="#pannelloAbout" prefHeight="56.0" prefWidth="110.0" stylesheets="@../stylesheet.css" text="About" textAlignment="CENTER" textFill="#f1e2cc">
+                        <Button id="about" mnemonicParsing="false" onAction="#pannelloAbout" prefHeight="56.0" prefWidth="110.0" stylesheets="@../stylesheet.css" text="About" textAlignment="CENTER" textFill="#f1e2cc">
                             <font>
                                 <Font name="Arial Black" size="23.0" />
                             </font>
@@ -76,17 +75,14 @@
     <left>
         <StackPane prefHeight="802.0" prefWidth="234.0" styleClass="panel" stylesheets="@../stylesheet.css" BorderPane.alignment="CENTER">
             <children>
-                <VBox fx:id="pannelloVersione" prefHeight="819.0" prefWidth="234.0" spacing="30.0">
+                <VBox alignment="CENTER_LEFT" prefHeight="819.0" prefWidth="234.0" spacing="30.0">
                     <children>
-                        <Button fx:id="backArrow" contentDisplay="GRAPHIC_ONLY" disable="true" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="58.0" rotate="180.0" styleClass="backButton" stylesheets="@../stylesheet.css" visible="false">
-                            <graphic>
-                                <ImageView fitHeight="29.0" fitWidth="36.0">
-                                    <image>
-                                        <Image url="@../icons/freccia.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Button>
+                        <HBox fx:id="simulationVelocityHB" disable="true" layoutX="40.0" layoutY="112.0" prefHeight="28.0" prefWidth="194.0" spacing="10.0" visible="false">
+                     <children>
+                        <ChoiceBox fx:id="simulationVelocity" prefHeight="26.0" prefWidth="43.0" />
+                        <Label prefHeight="28.0" prefWidth="134.0" styleClass="choiceBox" stylesheets="@../stylesheet.css" text="Velocità" />
+                     </children>
+                  </HBox>
                         <HBox fx:id="numOfPlayersHBox" disable="true" layoutX="45.0" layoutY="60.0" prefHeight="28.0" prefWidth="194.0" spacing="10.0" visible="false">
                             <children>
                                 <ChoiceBox fx:id="numOfPlayersChoiceBox" prefHeight="26.0" prefWidth="43.0" />
@@ -113,6 +109,10 @@
                         <CheckBox fx:id="doppioSeiCB" disable="true" mnemonicParsing="false" styleClass="checkBox" text="Doppio sei" visible="false" />
                         <CheckBox fx:id="lancioFinaleCB" disable="true" mnemonicParsing="false" styleClass="checkBox" text="Lancio finale" visible="false" />
                         <CheckBox fx:id="divietoDiSostaCB" disable="true" mnemonicParsing="false" styleClass="checkBox" stylesheets="@../stylesheet.css" text="Carta divieto di sosta" visible="false" />
+                        <Button fx:id="stepManuale" disable="true" mnemonicParsing="false" onAction="#stepManuale" styleClass="configButton" stylesheets="@../stylesheet.css" text="Step" visible="false">
+                     <VBox.margin>
+                        <Insets left="30.0" top="148.0" />
+                     </VBox.margin></Button>
                     </children>
                     <padding>
                         <Insets left="30.0" top="30.0" />
@@ -125,7 +125,7 @@
                     </opaqueInsets></VBox>
                 <AnchorPane fx:id="slider" minWidth="0.0" prefHeight="802.0" prefWidth="234.0" styleClass="slider" stylesheets="@../stylesheet.css">
                     <children>
-                        <Button id="salvata" fx:id="importa" graphicTextGap="20.0" layoutX="-1.0" layoutY="105.0" mnemonicParsing="false" onAction="#inserisciFile" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Importa da file">
+                        <Button id="salvata" graphicTextGap="20.0" layoutX="-1.0" layoutY="105.0" mnemonicParsing="false" onAction="#inserisciFile" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Importa da file">
                             <font>
                                 <Font name="Arial" size="19.0" />
                             </font>
@@ -137,7 +137,7 @@
                                 </ImageView>
                             </graphic>
                         </Button>
-                        <Button id="personalizzata" fx:id="personalizza" graphicTextGap="20.0" layoutY="185.0" mnemonicParsing="false" onAction="#pannelloConfigurazione" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Personalizza">
+                        <Button id="personalizzata" graphicTextGap="20.0" layoutY="185.0" mnemonicParsing="false" onAction="#pannelloConfigurazione" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Personalizza">
                             <font>
                                 <Font name="Arial" size="19.0" />
                             </font>
@@ -152,7 +152,7 @@
                                 <Insets right="18.0" />
                             </padding>
                         </Button>
-                        <Button id="default" fx:id="defaultB" graphicTextGap="20.0" layoutX="-1.0" layoutY="265.0" mnemonicParsing="false" onAction="#pannelloDefault" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Default">
+                        <Button id="default" graphicTextGap="20.0" layoutX="-1.0" layoutY="265.0" mnemonicParsing="false" onAction="#pannelloDefault" prefHeight="80.0" prefWidth="234.0" stylesheets="@../stylesheet.css" text="Default">
                             <font>
                                 <Font name="Arial" size="19.0" />
                             </font>
@@ -175,10 +175,6 @@
     <right>
         <StackPane prefHeight="150.0" prefWidth="235.0" BorderPane.alignment="CENTER">
             <children>
-                <TextArea fx:id="textAreaSimul" disable="true" prefHeight="771.0" prefWidth="195.0" visible="false">
-                    <StackPane.margin>
-                        <Insets bottom="150.0" left="15.0" right="15.0" top="15.0" />
-                    </StackPane.margin></TextArea>
                 <VBox alignment="TOP_CENTER" prefHeight="802.0" prefWidth="235.0" spacing="40.0">
                     <children>
                         <Button fx:id="salva" disable="true" mnemonicParsing="false" onAction="#salva" styleClass="configButton" stylesheets="@../stylesheet.css" text="Salva" visible="false" />
@@ -195,32 +191,32 @@
                                     <content>
                                         <AnchorPane prefHeight="399.0" prefWidth="205.0">
                                             <children>
-                                                <ImageView fitHeight="129.0" fitWidth="70.0" layoutX="13.0" layoutY="20.0" onDragDetected="#creaSerpente1" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="129.0" fitWidth="70.0" layoutX="13.0" layoutY="20.0" onDragDetected="#creaSerpente" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@../icons/serpe1.png" />
                                                     </image>
                                                 </ImageView>
-                                                <ImageView fitHeight="168.0" fitWidth="45.0" layoutX="30.0" layoutY="201.0" onDragDetected="#creaSerpente2" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="45.0" layoutX="30.0" layoutY="201.0" onDragDetected="#creaSerpente" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@../icons/serpe2.png" />
                                                     </image>
                                                 </ImageView>
-                                                <ImageView fitHeight="142.0" fitWidth="78.0" layoutX="102.0" layoutY="244.0" onDragDetected="#creaSerpente3" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="142.0" fitWidth="78.0" layoutX="102.0" layoutY="244.0" onDragDetected="#creaSerpente" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@../icons/serpe3.png" />
                                                     </image>
                                                 </ImageView>
-                                                <ImageView fitHeight="122.0" fitWidth="51.0" layoutX="131.0" layoutY="14.0" onDragDetected="#creaSerpente5" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="122.0" fitWidth="51.0" layoutX="131.0" layoutY="14.0" onDragDetected="#creaSerpente" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@../icons/serpe5.png" />
                                                     </image>
                                                 </ImageView>
-                                                <ImageView fitHeight="100.0" fitWidth="94.0" layoutX="16.0" layoutY="101.0" onDragDetected="#creaSerpente4" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="100.0" fitWidth="94.0" layoutX="16.0" layoutY="101.0" onDragDetected="#creaSerpente" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@../icons/serpe4.png" />
                                                     </image>
                                                 </ImageView>
-                                                <ImageView fitHeight="107.0" fitWidth="65.0" layoutX="124.0" layoutY="138.0" onDragDetected="#creaSerpente6" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="107.0" fitWidth="65.0" layoutX="124.0" layoutY="138.0" onDragDetected="#creaSerpente" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@../icons/serpe6.png" />
                                                     </image>
@@ -264,7 +260,7 @@
                                         </ImageView>
                                     </graphic>
                                 </Tab>
-                                <Tab fx:id="tabellaSpeciali">
+                                <Tab>
                                     <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                             <children>
@@ -307,16 +303,18 @@
                             </tabs>
                         </TabPane>
                         <Slider fx:id="rotationSlider" disable="true" max="90.0" min="-90.0" visible="false" />
-                        <Button fx:id="simulazione" mnemonicParsing="false" onAction="#nextState" styleClass="configButton" stylesheets="@../stylesheet.css" text="Simulazione" />
+                        <Button id="simulation" fx:id="simulazione" mnemonicParsing="false" onAction="#nextState" styleClass="configButton" stylesheets="@../stylesheet.css" text="Simulazione" />
                     </children>
                     <padding>
                         <Insets left="15.0" right="15.0" top="30.0" />
                     </padding>
                 </VBox>
+                <TextArea fx:id="textAreaSimul" disable="true" prefHeight="771.0" prefWidth="195.0" visible="false">
+                    <StackPane.margin>
+                        <Insets bottom="150.0" left="5.0" right="10.0" top="10.0" />
+                    </StackPane.margin>
+                </TextArea>
             </children>
         </StackPane>
     </right>
-    <center>
-        <Group fx:id="gridGroup" BorderPane.alignment="CENTER" />
-    </center>
 </BorderPane>

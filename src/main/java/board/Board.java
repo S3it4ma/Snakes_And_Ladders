@@ -1,7 +1,6 @@
 package board;
 
 
-import board.events.DroppedOnBoard;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
@@ -26,10 +25,10 @@ public class Board extends Group {
             image[i] = new Image(System.getProperty("user.dir")+"\\src\\main\\resources\\colours\\"+(i+1)+".png");
         }
     }
-    public AnchorableImage[][] getSquares() {
+    AnchorableImage[][] getSquares() {
         return squares;
     }
-    public GridPane getGrid() {
+    GridPane getGrid() {
         return gridPane;
     }
 

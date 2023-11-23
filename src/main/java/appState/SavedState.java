@@ -4,24 +4,18 @@ import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 import board.BoardHandler;
 import javafx.scene.control.TextArea;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SavedState extends AppState {
-    private final BoardHandler boardHandler;
 
     public SavedState(ArrayList<Node> nodes, BoardHandler bh) {
-        super(nodes);
-        this.boardHandler = bh;
+        super(nodes, bh);
         this.simulationButtonText = "Simulazione";
     }
 
     @Override
-    protected void showBoard() {
-        //parent.getChildren().remove(parent.getCenter());
-        boardHandler.createBoardFromFile("saved.txt");
-    }
+    protected void showBoard() {}
 
     @Override
     public ApplicationState nextState(ArrayList<Node> sNodes) {
@@ -41,7 +35,7 @@ public class SavedState extends AppState {
         }
 
         return new SimulationState(sNodes,
-                                                        boardHandler,
-                                                        boardHandler.prepareSimulation(choiceBoxHashMap, ta));
+                                   boardHandler,
+                                   boardHandler.prepareSimulation(choiceBoxHashMap, ta));
     }
 }

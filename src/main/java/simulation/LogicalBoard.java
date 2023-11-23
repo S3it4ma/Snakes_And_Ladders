@@ -37,46 +37,52 @@ public class LogicalBoard {
             }
         }
 
-        Simulation s = new Simulation(squares, textArea);
+        Simulation.Dice dice = Simulation.Dice.DOUBLE;
 
         boolean isDefaultConfiguration = (list == null);
 
-        if (isDefaultConfiguration) return s;
+        if (isDefaultConfiguration) return new Simulation(squares, textArea, dice);
+
+        Simulation s;
 
         if (list.get("Dado singolo").isSelected()) {
-            s = new SingleDiceSimulation(squares, textArea);
+            dice = Simulation.Dice.SINGLE;
         }
-        if (list.get("Doppio sei").isSelected()) {
-            s = new DoubleSixDecorator((SingleDiceSimulation) s);
-        }
-        if (list.get("Lancio finale").isSelected()) {
-            s = new LastRollDecorator((SingleDiceSimulation) s);
-        }
+
         if (deck != null) {
             if (list.get("Carta divieto di sosta").isSelected()) {
                 deck.addCard(new BlockStrategy());
             }
-            s = new DeckSimulation(s, deck);
+            s = new DeckSimulation(squares, textArea, dice, deck);
+        }
+        else s = new Simulation(squares, textArea, dice);
+
+        if (list.get("Doppio sei").isSelected()) {
+            s = new DoubleSixDecorator(s);
+        }
+        if (list.get("Lancio finale").isSelected()) {
+            s = new LastRollDecorator(s);
         }
         return s;
     }
 
+    /*
     private String type(AnchorableImage connector) {
         String string = connector.getImage().getUrl();
-        String subString = string.substring(string.lastIndexOf("\\"), string.indexOf("."));
+        String subString = string.substring(string.lastIndexOf("/"), string.indexOf("."));
 
         int end = (subString.substring(subString.length()-1).matches("\\d")) ? 2 : subString.length();
         subString = subString.substring(1, end);
         return subString;
-    }
+    }*/
 
     private HandleStrategy findStrategy(AnchorableImage image) {
         if (image == null) return new NoStrategy();
 
-        String type = type(image);
+        //String type = type(image);
         HandleStrategy result;
 
-        switch (type) {
+        switch (image.toString()) {
             case "dadi" -> {
                 result = new DiceStrategy();
             }

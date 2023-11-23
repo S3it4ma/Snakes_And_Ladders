@@ -1,18 +1,20 @@
 package board;
 
 
+import app.Controller;
 import appState.SimulationState;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.ArrayList;
 
 
@@ -25,7 +27,7 @@ public class Main3 extends javafx.application.Application {
         stage.setScene(scene);
 
         BoardHandler bh = new BoardHandler(new Slider(), bp);
-        bh.createBoardFromFile("default.txt");
+
 
         TextArea ta = new TextArea();
         ta.setWrapText(true);
@@ -38,13 +40,16 @@ public class Main3 extends javafx.application.Application {
         Button start = new Button("wow");
         start.setId("simulation");
 
+        StackPane pane = new StackPane();
         VBox hb = new VBox();
 
-        hb.getChildren().add(ta);
+
         hb.getChildren().add(start);
         hb.getChildren().add(cb);
+        pane.getChildren().add(hb);
+        pane.getChildren().add(ta);
 
-        bp.setRight(hb);
+        bp.setRight(pane);
 
         ArrayList<Node> list = new ArrayList<>();
         list.add(ta); list.add(start); list.add(cb);

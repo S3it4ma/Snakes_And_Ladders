@@ -1,4 +1,4 @@
-package sidebarState;
+package appState.sidebarState;
 
 import javafx.animation.Transition;
 import javafx.scene.Node;

@@ -9,8 +9,12 @@ public class JumpStrategy implements HandleStrategy {
 
     @Override
     public void handle(Simulation simulation) {
-        String text = "Il giocatore "+simulation.getCurrentPlayer().getName()+" deve spostarsi sulla casella "+squareToJumpTo+"!";
         simulation.getCurrentPlayer().setSquare(squareToJumpTo);
-        simulation.show(text);
+        simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
+    }
+
+    @Override
+    public String toString() {
+        return " deve spostarsi sulla casella "+squareToJumpTo+"!";
     }
 }

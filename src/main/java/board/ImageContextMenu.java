@@ -22,18 +22,23 @@ public class ImageContextMenu extends ContextMenu {
     }
 
     private void createContextMenu() {
+        Board board = (Board) img.getParent();
 
         MenuItem move = new MenuItem("Sposta");
         move.setOnAction(e -> {
             img.setAnchored(false);
             deleteImage();
+            DragAndResize eventHandler = (DragAndResize) board.getOnMouseClicked();
+            eventHandler.activateBorder(false);
         });
-        MenuItem delete = new MenuItem("Rimuovi");
 
+        MenuItem delete = new MenuItem("Rimuovi");
         delete.setOnAction(e -> {
-            Board board = (Board) img.getParent();
             deleteImage();
             board.getChildren().remove(img);
+
+            DragAndResize eventHandler = (DragAndResize) board.getOnMouseClicked();
+            eventHandler.activateBorder(false);
         });
         this.getItems().addAll(move, delete);
     }

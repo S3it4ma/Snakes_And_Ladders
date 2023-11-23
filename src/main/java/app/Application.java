@@ -1,8 +1,8 @@
 package app;
 
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,9 +13,9 @@ public class Application extends javafx.application.Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Scale e Serpenti");
+        stage.getIcons().add(new Image(Application.class.getResource("mainIcon.png").toExternalForm()));
         stage.setScene(scene);
         stage.setMaximized(true);
-        //stage.setResizable(false);
         stage.show();
     }
 

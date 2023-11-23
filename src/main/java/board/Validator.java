@@ -29,7 +29,9 @@ public class Validator {
 
     private boolean validate() {
         int firstSquareColumn = (squares.length % 2 == 0) ? 0 : squares[0].length-1;
-        if (squares[0][0] != null || squares[squares.length-1][firstSquareColumn] != null) return false;
+        boolean isLastSquareOccupied = squares[0][0] != null;
+        if (isLastSquareOccupied) return false;
+
 
         for (int i=0; i<squares.length; i++) {
             for (int j=0; j<squares[0].length; j++) {
@@ -48,6 +50,7 @@ public class Validator {
                 double offsetX = sAnchorR.getX() - anchorR.getX() + anchor.getX() ;
                 double offsetY = sAnchorR.getY() - anchorR.getY() + anchor.getY() ;
 
+                System.out.println("x: "+connector.getLayoutX()+" y: "+connector.getLayoutY());
                 double imgStartX = connector.getLayoutX() + offsetX;
                 double imgStartY = connector.getLayoutY()  + offsetY;
 
@@ -61,10 +64,10 @@ public class Validator {
                                 ((rowIndex % 2 == 0 && colIndex < j) ||
                                  (rowIndex % 2 == 1 && colIndex > j));
 
-                if (squares[rowIndex][colIndex] != null && squares[rowIndex][colIndex] != connector)
-                        return false;
+                boolean overlappingConnector = (squares[rowIndex][colIndex] != null && squares[rowIndex][colIndex] != connector);
+                if (overlappingConnector) return false;
 
-                System.out.println("is a snake? "+isSnake(connector)+", isSecondBeforeFirst: "+secondAnchorIsBeforeFirst+"; rowIndex, colIndex: ("+rowIndex + ", "+ colIndex+"); i, j: ("+i+", "+j+")");
+                //System.out.println("is a snake? "+isSnake(connector)+", isSecondBeforeFirst: "+secondAnchorIsBeforeFirst+"; rowIndex, colIndex: ("+rowIndex + ", "+ colIndex+"); i, j: ("+i+", "+j+")");
 
                 if (isSnake(connector)) {
                     if (rowIndex < i || secondAnchorIsBeforeFirst) return false;
@@ -80,6 +83,8 @@ public class Validator {
                     else connectorHashMap.put(connector, new int[] {rowIndex, colIndex});
                 }
             }
+            boolean isFirstSquareOccupied = squares[squares.length-1][firstSquareColumn] != null;
+            if (isFirstSquareOccupied) return false;
         }
         return true;
     }

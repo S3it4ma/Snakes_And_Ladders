@@ -1,14 +1,16 @@
-package board.events;
+package board;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import board.BoardHandler;
 import board.Connector;
+import javafx.scene.transform.Rotate;
 
 import java.util.HashMap;
 
@@ -71,7 +73,7 @@ public class DragAndResize implements EventHandler<MouseEvent> {
         });
     }
 
-    private void activateBorder(boolean flag) {
+    void activateBorder(boolean flag) {
         circle.setVisible(flag);
         circle.setDisable(!flag);
 
@@ -79,7 +81,7 @@ public class DragAndResize implements EventHandler<MouseEvent> {
         rect.setVisible(flag);
     }
 
-    public void adjustBorder(Connector imgV) {
+    void adjustBorder(Connector imgV) {
         circle.setCenterX(imgV.getBoundsInParent().getMaxX());
         circle.setCenterY(imgV.getBoundsInParent().getMaxY());
 
@@ -93,6 +95,8 @@ public class DragAndResize implements EventHandler<MouseEvent> {
     @Override
     public void handle(MouseEvent mouseEvent) {
         Node receiver = mouseEvent.getPickResult().getIntersectedNode();
+        if (!mouseEvent.getButton().equals(MouseButton.PRIMARY)) return;
+
         if (!(receiver instanceof Connector connector) || !((Connector) receiver).isAnchored()) return;
 
         if (connector != boardHandler.getCurrentSelected()) {
@@ -100,6 +104,7 @@ public class DragAndResize implements EventHandler<MouseEvent> {
             if (!initialHeight.containsKey(connector))
                 initialHeight.put(connector, connector.getCurrentImageHeight());
 
+            boardHandler.slider.setValue(((Rotate) connector.getTransforms().get(0)).getAngle());
             boardHandler.disableSlider(false);
             activateBorder(true);
         }

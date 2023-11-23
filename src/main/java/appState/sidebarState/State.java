@@ -1,4 +1,4 @@
-package sidebarState;
+package appState.sidebarState;
 
 public interface State {
 

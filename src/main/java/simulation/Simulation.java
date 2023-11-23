@@ -9,7 +9,6 @@ import java.util.*;
 public class Simulation {
     protected int currentIndex;
     protected Player[] player;
-    protected Random random = new Random();
     protected HandleStrategy[] squares;
     protected Color[] color = {Color.WHITE, Color.BEIGE, Color.DARKGREY, Color.CYAN,
                                Color.PINK, Color.BLUE, Color.DARKMAGENTA, Color.DARKGOLDENROD,
@@ -19,10 +18,28 @@ public class Simulation {
     protected int currentDiceValue;
     protected TextArea textArea;
     protected BoardHandler boardHandler;
+    enum Dice {
+        SINGLE (1, 6),
+        DOUBLE (2, 12);
 
+        private Random random = new Random();
+        private final int min;
+        private final int max;
+
+        Dice(int min, int max) {
+            this.min = min;
+            this.max = max;
+        }
+        int rollDice() {
+            return random.nextInt(min, max+1);
+        }
+    };
+
+    protected Dice dice;
     protected Simulation() {}
 
-    public Simulation(HandleStrategy[] squares, TextArea textArea) {
+    public Simulation(HandleStrategy[] squares, TextArea textArea, Dice dice) {
+        this.dice = dice;
         this.textArea = textArea;
         this.squares = squares;
     }
@@ -44,11 +61,9 @@ public class Simulation {
             boardHandler.movePlayer(p.getCircle(), 1);
         }
     }
-
     public void setBoardHandler(BoardHandler boardHandler) {
         this.boardHandler = boardHandler;
     }
-
     public boolean hasPlayerWon() {
         return playerWin;
     }
@@ -72,7 +87,7 @@ public class Simulation {
     }
 
     public int rollDice() {
-        currentDiceValue = random.nextInt(2, 12+1);
+        currentDiceValue = dice.rollDice();
         return currentDiceValue;
     }
 
@@ -87,7 +102,7 @@ public class Simulation {
         Player currentP = player[currentIndex];
         int squareToGo = currentP.getSquare() + number;
 
-        System.out.println(squareToGo + ": il gio "+ currentIndex + " ha fatto "+currentDiceValue);
+        System.out.println(squareToGo + ": gio "+ currentIndex + " ha fatto "+currentDiceValue);
 
         if (squareToGo == squares.length) {
             currentP.setSquare(squareToGo);
@@ -102,8 +117,7 @@ public class Simulation {
         }
 
         currentP.setSquare(squareToGo);
-        textArea.appendText(player[currentIndex].toString()+'\n');
-        boardHandler.movePlayer(currentP.getCircle(), currentP.getSquare());
+        show(currentP.toString());
 
         squares[squareToGo-1].handle(this);
     }

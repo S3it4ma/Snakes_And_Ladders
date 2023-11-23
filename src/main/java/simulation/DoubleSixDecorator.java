@@ -3,7 +3,7 @@ package simulation;
 public class DoubleSixDecorator extends SimulationDecorator {
     private int maxRoll = 3;
 
-    public DoubleSixDecorator(SingleDiceSimulation simulation) {
+    public DoubleSixDecorator(Simulation simulation) {
         super(simulation);
     }
 

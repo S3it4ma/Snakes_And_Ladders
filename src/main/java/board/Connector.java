@@ -23,25 +23,14 @@ public class Connector extends AnchorableImage {
         super(firstAnchor, img);
         this.secondAnchor = secondAnchor;
     }
-
-
-
     public Point2D getSecondAnchor() {
         return secondAnchor;
     }
-
-    //public boolean isSecondAnchored() {return secondPointAnchored;}
 
     @Override
     protected void updateAnchor(double scaleFactor) {
         super.updateAnchor(scaleFactor);
         secondAnchor=new Point2D(secondAnchor.getX() * scaleFactor,
                 secondAnchor.getY() * scaleFactor);
-    }
-
-    @Override
-    public String toString() {
-        String path = this.getImage().getUrl();
-        return path.substring(path.lastIndexOf("\\")+1, path.indexOf("."));
     }
 }

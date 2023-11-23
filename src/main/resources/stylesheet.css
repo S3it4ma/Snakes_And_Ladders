@@ -24,7 +24,7 @@
 }
 
 .panel {
-    -fx-background-color:  #001233;
+    -fx-background-color: #001233;
 }
 
 .slider {
@@ -68,7 +68,6 @@
 {
     -fx-background-color: transparent;
     -fx-text-fill: #ff595a;
-
 }
 
 
@@ -113,5 +112,3 @@
     -fx-background-color: transparent;
     -fx-font-weight: bold;
 }
-
-

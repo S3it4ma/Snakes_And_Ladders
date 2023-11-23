@@ -6,11 +6,10 @@ import javafx.scene.shape.Circle;
 
 public class Player {
     protected int square = 1;
-    protected Circle circle = new Circle(20);
+    protected Circle circle = new Circle();
     protected String name;
     public Player(String name) {
-        this.name=name;
-        circle.setStrokeWidth(30);
+        this.name = name;
         circle.setStroke(Color.TRANSPARENT);
     }
     public void setFill(Paint paint) {
@@ -36,6 +35,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Giocatore "+ name + " giunge alla casella " + square;
+        return "Giocatore "+ name + " giunge alla casella " + square+".";
     }
 }

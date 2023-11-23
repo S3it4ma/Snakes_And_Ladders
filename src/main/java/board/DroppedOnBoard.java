@@ -1,4 +1,4 @@
-package board.events;
+package board;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Bounds;
@@ -7,6 +7,8 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.layout.GridPane;
 import board.AnchorableImage;
 import board.Board;
+import javafx.scene.transform.Rotate;
+
 public class DroppedOnBoard implements EventHandler<DragEvent> {
     private final Board board;
 

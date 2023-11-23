@@ -11,13 +11,13 @@ public class WaitingPlayer extends Player {
 
     public void setTurnsToWait(int turnsToWait) {
         this.turnsToWait = turnsToWait;
+        stopped = true;
     }
 
     @Override
     public void play(Simulation simulation) {
         if (turnsToWait>0) {
             turnsToWait--;
-            stopped = true;
             return;
         }
         stopped = false;
@@ -29,6 +29,6 @@ public class WaitingPlayer extends Player {
         if (stopped) {
             return "Il giocatore "+name+" salta il turno, "+turnsToWait+" rimanenti."; 
         }
-        else return super.toString();
+        return super.toString();
     }
 }

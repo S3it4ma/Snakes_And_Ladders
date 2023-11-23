@@ -1,9 +1,8 @@
-package board.events;
+package board;
 
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.*;
-import board.AnchorableImage;
 
 public class DragAndDrop implements EventHandler<MouseEvent>{
     private final AnchorableImage img;

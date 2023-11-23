@@ -19,4 +19,8 @@ public class CardPlayer extends WaitingPlayer {
         }
         super.setTurnsToWait(number);
     }
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

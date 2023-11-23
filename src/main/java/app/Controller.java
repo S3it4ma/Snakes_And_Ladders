@@ -2,40 +2,37 @@ package app;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.geometry.Point2D;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import appState.*;
 import board.BoardHandler;
-import sidebarState.HideState;
-import sidebarState.TransitionState;
+import appState.sidebarState.HideState;
+import appState.sidebarState.TransitionState;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Controller {
     @FXML
-    private Tab tabellaSpeciali;
+    private ChoiceBox<Double> simulationVelocity;
     @FXML
-    private Button about;
+    private HBox simulationVelocityHB;
     @FXML
-    private Button aiuto;
-    @FXML
-    private Button backArrow;
+    private Button stepManuale;
     @FXML
     private ChoiceBox<Integer> numOfPlayersChoiceBox;
     @FXML
     private HBox numOfPlayersHBox;
-    @FXML
-    private VBox pannelloVersione;
     @FXML
     private TextArea textAreaSimul;
     @FXML
@@ -47,15 +44,9 @@ public class Controller {
     @FXML
     private CheckBox doppioSeiCB;
     @FXML
-    private Button importa;
-    @FXML
-    private Button defaultB;
-    @FXML
     private CheckBox lancioFinaleCB;
     @FXML
     private ImageView menu;
-    @FXML
-    private Button personalizza;
     @FXML
     private HBox rowHBox;
     @FXML
@@ -70,8 +61,6 @@ public class Controller {
     private AnchorPane slider;
     @FXML
     private TabPane tabPane;
-    @FXML
-    private Group gridGroup;
     @FXML
     private Slider rotationSlider;
     @FXML
@@ -90,7 +79,20 @@ public class Controller {
     }
     @FXML
     void salva(ActionEvent event) {
-        boardHandler.saveBoard("saved.txt");
+        if (!boardHandler.validateBoard()) {
+            Alert errorAlert = new ErrorAlert(ErrorAlert.TYPE.WRONG_CONFIG);
+            errorAlert.showAndWait();
+        }
+
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Scegli la configurazione salvata");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
+        fc.setInitialDirectory(new File(System.getProperty("user.dir")+"\\src\\main\\resources\\savedConfigs"));
+        Stage currentStage = (Stage) salva.getScene().getWindow();
+
+        File selectedFile = fc.showSaveDialog(currentStage);
+
+        boardHandler.saveBoard(selectedFile);
     }
     @FXML
     void creaCasella(MouseEvent event) {
@@ -100,53 +102,9 @@ public class Controller {
     void creaScala(MouseEvent event) {
         boardHandler.createLadder((ImageView) event.getSource(), event);
     }
-
     @FXML
-    void creaSerpente1(MouseEvent event) {
-        boardHandler.createSnake((ImageView) event.getSource(),
-                new Point2D(145,77),
-                new Point2D(30, 548),
-                event);
-    }
-
-    @FXML
-    void creaSerpente2(MouseEvent event) {
-        boardHandler.createSnake((ImageView) event.getSource(),
-                new Point2D(224,22),
-                new Point2D(0, 1348),
-                event);
-    }
-
-    @FXML
-    void creaSerpente3(MouseEvent event) {
-        boardHandler.createSnake((ImageView) event.getSource(),
-                new Point2D(22,108),
-                new Point2D(673, 1122),
-                event);
-    }
-
-    @FXML
-    void creaSerpente4(MouseEvent event) {
-        boardHandler.createSnake((ImageView) event.getSource(),
-                new Point2D(31,90),
-                new Point2D(357, 856),
-                event);
-    }
-
-    @FXML
-    void creaSerpente5(MouseEvent event) {
-        boardHandler.createSnake((ImageView) event.getSource(),
-                new Point2D(522,106),
-                new Point2D(26, 1234),
-                event);
-    }
-
-    @FXML
-    void creaSerpente6(MouseEvent event) {
-        boardHandler.createSnake((ImageView) event.getSource(),
-                new Point2D(34,89),
-                new Point2D(211, 710),
-                event);
+    void creaSerpente(MouseEvent event) {
+        boardHandler.createSnake((ImageView) event.getSource(), event);
     }
 
     @FXML
@@ -158,6 +116,23 @@ public class Controller {
 
     @FXML
     void inserisciFile(ActionEvent event) {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Scegli la configurazione salvata");
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
+        fc.setInitialDirectory(new File(System.getProperty("user.dir")+"\\src\\main\\resources\\savedConfigs"));
+        Stage currentStage = (Stage) textAreaSimul.getScene().getWindow();
+
+        File selectedFile = fc.showOpenDialog(currentStage);
+        if (selectedFile == null) return;
+
+        try {
+            boardHandler.createBoardFromFile(selectedFile);
+        } catch(Exception e) {
+            Alert errorAlert = new ErrorAlert(ErrorAlert.TYPE.WRONG_FORMAT);
+            errorAlert.showAndWait();
+            return;
+        }
+
         ApplicationState newState = new SavedState(savedSNodes, boardHandler);
         appState = appState.nextState(newState);
         simulazione.setText(appState.getSimulationButtonText());
@@ -166,12 +141,14 @@ public class Controller {
 
     @FXML
     void pannelloAbout(ActionEvent event) {
-
+        Alert alert = new AboutAlert();
+        alert.showAndWait();
     }
 
     @FXML
     void pannelloAiuto(ActionEvent event) {
-
+        Alert alert = new HelpAlert();
+        alert.showAndWait();
     }
 
     @FXML
@@ -188,6 +165,12 @@ public class Controller {
         appState = appState.nextState(newState);
         simulazione.setText(appState.getSimulationButtonText());
         appState.show();
+    }
+
+
+    @FXML
+    void stepManuale(ActionEvent event) {
+        ((SimulationState) appState).doManualStep();
     }
 
     @FXML
@@ -211,6 +194,7 @@ public class Controller {
             colChoiceBox.getItems().add(base);
             numOfPlayersChoiceBox.getItems().add(base-3);
         }
+        for (int i=5; i<=100; i+=5) simulationVelocity.getItems().add(((double) i)/10);
 
         defaultSNodes = new ArrayList<>(1);
         savedSNodes = new ArrayList<>(5);
@@ -236,12 +220,13 @@ public class Controller {
         simulationSNodes.add(simulazione);
         simulationSNodes.add(numOfPlayersHBox);
         simulationSNodes.add(numOfPlayersChoiceBox);
+        simulationSNodes.add(simulationVelocityHB);
         simulationSNodes.add(textAreaSimul);
-
-        simulazione.setId("simulazione");
+        simulationSNodes.add(stepManuale);
 
         rowChoiceBox.setValue(10);
         colChoiceBox.setValue(10);
+        simulationVelocity.setValue(1d);
 
         ChangeListener<Integer> changeListener=new ChangeListener<Integer>() {
             @Override
@@ -249,9 +234,16 @@ public class Controller {
                 boardHandler.createNewGrid(rowChoiceBox.getValue(), colChoiceBox.getValue());
             }
         };
+        ChangeListener<Double> velocityChangeListener=new ChangeListener<Double>() {
+            @Override
+            public void changed(ObservableValue<? extends Double> observableValue, Double oldVal, Double newVal) {
+                ((SimulationState) appState).setSimulationSpeed(newVal);
+            }
+        };
 
         rowChoiceBox.getSelectionModel().selectedItemProperty().addListener(changeListener);
         colChoiceBox.getSelectionModel().selectedItemProperty().addListener(changeListener);
+        simulationVelocity.getSelectionModel().selectedItemProperty().addListener(velocityChangeListener);
 
         rotationSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -261,6 +253,7 @@ public class Controller {
         });
 
         numOfPlayersChoiceBox.setValue(5);
+        textAreaSimul.setEditable(false);
         textAreaSimul.setWrapText(true);
 
         boardHandler = new BoardHandler(rotationSlider, borderPane);

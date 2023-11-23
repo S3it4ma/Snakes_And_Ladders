@@ -1,0 +1,12 @@
+10 10
+puntoInterrogativo 9 5 55.599999999999994
+puntoInterrogativo 9 1 55.599999999999994
+puntoInterrogativo 9 2 55.599999999999994
+puntoInterrogativo 9 3 55.599999999999994
+puntoInterrogativo 9 6 55.599999999999994
+puntoInterrogativo 9 4 55.599999999999994
+puntoInterrogativo 9 7 55.599999999999994
+puntoInterrogativo 7 1 55.599999999999994
+puntoInterrogativo 9 8 55.599999999999994
+puntoInterrogativo 9 9 55.599999999999994
+puntoInterrogativo 8 0 55.599999999999994
