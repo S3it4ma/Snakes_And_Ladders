@@ -44,30 +44,28 @@ public class Validator {
                 double width = gridPane.getCellBounds(0, 0).getWidth() - 0.3;
                 double angle = ((Rotate) connector.getTransforms().get(0)).getAngle();
 
-                Point2D anchorR = calcRotation(anchor.getX(), anchor.getY(), angle);
-                Point2D sAnchorR = calcRotation(secondAnchor.getX(), secondAnchor.getY(), angle);
+                Point2D firstAnchorRotated = calcRotation(anchor.getX(), anchor.getY(), angle);
+                Point2D secondAnchorRotated = calcRotation(secondAnchor.getX(), secondAnchor.getY(), angle);
 
-                double offsetX = sAnchorR.getX() - anchorR.getX() + anchor.getX() ;
-                double offsetY = sAnchorR.getY() - anchorR.getY() + anchor.getY() ;
+                double offsetX = secondAnchorRotated.getX() - firstAnchorRotated.getX() + anchor.getX() ;
+                double offsetY = secondAnchorRotated.getY() - firstAnchorRotated.getY() + anchor.getY() ;
 
-                System.out.println("x: "+connector.getLayoutX()+" y: "+connector.getLayoutY());
                 double imgStartX = connector.getLayoutX() + offsetX;
                 double imgStartY = connector.getLayoutY()  + offsetY;
 
                 int rowIndex = (int) (imgStartY / width);
                 int colIndex = (int) (imgStartX / width);
 
-                if (imgStartX < 0 || imgStartY < 0 || rowIndex >= squares.length || colIndex >= squares[0].length)
-                    return false;
+                boolean isImageOutOfGrid = imgStartX < 0 || imgStartY < 0 ||
+                                           rowIndex >= squares.length || colIndex >= squares[0].length;
+
+                boolean overlappingConnector = (squares[rowIndex][colIndex] != null && squares[rowIndex][colIndex] != connector);
+
+                if (isImageOutOfGrid || overlappingConnector) return false;
 
                 boolean secondAnchorIsBeforeFirst = (i == rowIndex) &&
                                 ((rowIndex % 2 == 0 && colIndex < j) ||
                                  (rowIndex % 2 == 1 && colIndex > j));
-
-                boolean overlappingConnector = (squares[rowIndex][colIndex] != null && squares[rowIndex][colIndex] != connector);
-                if (overlappingConnector) return false;
-
-                //System.out.println("is a snake? "+isSnake(connector)+", isSecondBeforeFirst: "+secondAnchorIsBeforeFirst+"; rowIndex, colIndex: ("+rowIndex + ", "+ colIndex+"); i, j: ("+i+", "+j+")");
 
                 if (isSnake(connector)) {
                     if (rowIndex < i || secondAnchorIsBeforeFirst) return false;

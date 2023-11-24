@@ -10,7 +10,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.util.Duration;
 import board.BoardHandler;
-import simulation.DeckSimulation;
 import simulation.Simulation;
 
 import java.util.ArrayList;
@@ -27,11 +26,9 @@ public class SimulationState extends  AppState {
     public SimulationState(ArrayList<Node> nodes, BoardHandler bh, Simulation s) {
         super(nodes, bh);
         for (Node n : nodes) {
-            if (n instanceof ChoiceBox<?>) {
-                numOfPlayersCB = (ChoiceBox<Integer>) n;
-            }
             if (n instanceof TextArea) ta = (TextArea) n;
-            if (n instanceof Button b && b.getId().equals("simulation")) simulButton = (Button) n;
+            else if (n.getId().equals("simulation")) simulButton = (Button) n;
+            else if (n.getId().equals("numOfPlayersCB")) numOfPlayersCB = (ChoiceBox<Integer>) n;
         }
         simulation = s;
         simulation.setBoardHandler(boardHandler);

@@ -5,52 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="First deliverable">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/savedConfigs/def.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appState/AppState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/AppState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appState/DefaultState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/DefaultState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appState/PersonalizationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/PersonalizationState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appState/SavedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/SavedState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appState/sidebarState/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/sidebarState/State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/board/AnchorableImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/AnchorableImage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Connector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/Facade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/board/DragAndResize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/DragAndResize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/board/DroppedOnBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/DroppedOnBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/board/FileBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/FileBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/ImageContextMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/ImageContextMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/Main3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Main3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/board/Main3.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/board/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/events/DragAndDrop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/DragAndDrop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/events/DragAndResize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/DragAndResize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/events/DroppedOnBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/DroppedOnBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sidebarState/HideState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/sidebarState/HideState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sidebarState/ShowState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/sidebarState/ShowState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sidebarState/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/sidebarState/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sidebarState/TransitionState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/sidebarState/TransitionState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/BlockStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/BlockStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/CardPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/CardPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DeckSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DeckSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DiceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DiceStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DoubleSixDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DoubleSixDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/JumpStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/JumpStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/LastRollDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/LastRollDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/code.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/simulation/LogicalBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/LogicalBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/RandomStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/RandomStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/SingleDiceSimulation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/SpringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/SpringStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/WaitingPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/WaitingPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/WaitingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/WaitingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/todo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/default.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/default.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/saved.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/savedConfigs/saved.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/todo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/Selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/divietoDiSosta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/icons8-paint-30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/notSelected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/restartB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/restartR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/snake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/vittoria.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/stylesheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,8 +83,8 @@
       <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources\savedConfigs" />
       <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources\app" />
+      <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources\savedConfigs" />
       <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources\icons" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -134,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700077823317</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First deliverable">
+      <created>1700772868619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700772868619</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,11 +169,6 @@
             </State>
           </value>
         </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="8be80bc2-c8b2-4611-9e0a-4feca9ecdde7" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="RECENT_FILTERS">

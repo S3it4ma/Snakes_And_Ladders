@@ -66,20 +66,9 @@ public class LogicalBoard {
         return s;
     }
 
-    /*
-    private String type(AnchorableImage connector) {
-        String string = connector.getImage().getUrl();
-        String subString = string.substring(string.lastIndexOf("/"), string.indexOf("."));
-
-        int end = (subString.substring(subString.length()-1).matches("\\d")) ? 2 : subString.length();
-        subString = subString.substring(1, end);
-        return subString;
-    }*/
-
     private HandleStrategy findStrategy(AnchorableImage image) {
         if (image == null) return new NoStrategy();
 
-        //String type = type(image);
         HandleStrategy result;
 
         switch (image.toString()) {

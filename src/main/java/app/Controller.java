@@ -21,6 +21,7 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
     @FXML
@@ -69,7 +70,29 @@ public class Controller {
     private BoardHandler boardHandler;
     private appState.ApplicationState appState;
     private ArrayList<Node> savedSNodes, defaultSNodes, simulationSNodes, personalizationSNodes;
+    private List<CheckBox> doubleDiceCB;
 
+
+    @FXML
+    void disattivaDadoSingolo(ActionEvent event) {
+        CheckBox source = (CheckBox) event.getSource();
+
+        if (source.isSelected()) {
+            dadoSingoloCB.setDisable(true);
+        }
+        else {
+            for (CheckBox checkBox : doubleDiceCB)
+                if (checkBox != source && checkBox.isSelected())
+                    return;
+            dadoSingoloCB.setDisable(false);
+        }
+    }
+
+    @FXML
+    void disattivaDoppioDadoCB(ActionEvent event) {
+        lancioFinaleCB.setDisable(!lancioFinaleCB.isDisable());
+        doppioSeiCB.setDisable(!doppioSeiCB.isDisable());
+    }
 
     @FXML
     void nextState(ActionEvent event) {
@@ -228,6 +251,8 @@ public class Controller {
         colChoiceBox.setValue(10);
         simulationVelocity.setValue(1d);
 
+        doubleDiceCB = List.of(lancioFinaleCB, doppioSeiCB);
+
         ChangeListener<Integer> changeListener=new ChangeListener<Integer>() {
             @Override
             public void changed(ObservableValue<? extends Integer> observableValue, Integer oldVal, Integer newVal) {
@@ -253,6 +278,7 @@ public class Controller {
         });
 
         numOfPlayersChoiceBox.setValue(5);
+        numOfPlayersChoiceBox.setId("numOfPlayersCB");
         textAreaSimul.setEditable(false);
         textAreaSimul.setWrapText(true);
 

@@ -4,7 +4,6 @@ import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.net.URL;
 
 public class AnchorableImage extends ImageView {
     protected Point2D anchor;

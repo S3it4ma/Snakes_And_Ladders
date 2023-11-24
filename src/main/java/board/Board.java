@@ -32,18 +32,6 @@ public class Board extends Group {
         return gridPane;
     }
 
-    /*
-
-    public void setGridPane(GridPane gridPane) {
-        this.gridPane = gridPane;
-    }
-    public void setSquares(AnchorableImage[][] squares) {
-        this.squares = squares;
-    }
-    public void setCreationStrategy(CreationStrategy creationStrategy) {
-        this.creationStrategy = creationStrategy;
-    }*/
-
     private void createColorGrid(int[][] colours) {
         Random random=new Random();
         int choices = image.length;

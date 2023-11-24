@@ -8,8 +8,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-import board.BoardHandler;
-import board.Connector;
 import javafx.scene.transform.Rotate;
 
 import java.util.HashMap;
@@ -28,8 +26,6 @@ public class DragAndResize implements EventHandler<MouseEvent> {
     }
 
     private void initializeBorder() {
-        //Connector image = boardHandler.getCurrentSelected();
-
         rect = new Rectangle(0, 0,
                 20, 20);
 
