@@ -22,7 +22,7 @@ public class Simulation {
         SINGLE (1, 6),
         DOUBLE (2, 12);
 
-        private Random random = new Random();
+        private final Random random = new Random();
         private final int min;
         private final int max;
 
@@ -33,7 +33,7 @@ public class Simulation {
         int rollDice() {
             return random.nextInt(min, max+1);
         }
-    };
+    }
 
     protected Dice dice;
     protected Simulation() {}

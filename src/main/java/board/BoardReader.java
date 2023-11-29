@@ -8,37 +8,16 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class FileBoard {
+public class BoardReader {
     private final HashMap<String, Point2D[]> connectorPoints;
     private final String TYPE = "(dadi|puntoInterrogativo|panchina|locanda|molla|serpe[1-6]|scala[1-4])";
     private final String SIMPLE_DOUBLE = "[\\-]?\\d+(.\\d+)?";
     private final String ANCHORABLE_IMAGE = TYPE+"\\s+\\d{1,2}\\s+\\d{1,2}\\s+"+SIMPLE_DOUBLE+"(\\s+"+SIMPLE_DOUBLE+")?";
 
-    public FileBoard(HashMap<String, Point2D[]> connectorPoints) {
+    public BoardReader(HashMap<String, Point2D[]> connectorPoints) {
         this.connectorPoints = connectorPoints;
     }
 
-    public void write(Board board, File file) throws IOException {
-        try (PrintWriter printWriter = new PrintWriter(new FileWriter(file))) {
-
-            AnchorableImage[][] square = board.getSquares();
-            printWriter.println(square.length+" "+square[0].length);
-
-            for (int i=0; i < square.length; i++) {
-                for (int j=0; j < square[0].length; j++) {
-                    if (square[i][j] == null) continue;
-
-                    AnchorableImage image = square[i][j];
-                    printWriter.print(image+" "+ i +" "+ j + " "+ image.getCurrentImageWidth());
-
-                    if (image instanceof Connector c) {
-                        printWriter.print(" "+((Rotate) c.getTransforms().get(0)).getAngle());
-                    }
-                    printWriter.println();
-                }
-            }
-        }
-    }
 
     public Board read(File file) throws Exception {
         Board board = new Board();

@@ -41,7 +41,7 @@ public class Validator {
                 Point2D anchor = connector.getAnchor();
                 Point2D secondAnchor = connector.getSecondAnchor();
 
-                double width = gridPane.getCellBounds(0, 0).getWidth() - 0.3;
+                double width = (squares.length > squares[0].length)? Board.MAX_SIZE / squares.length : Board.MAX_SIZE / squares[0].length;
                 double angle = ((Rotate) connector.getTransforms().get(0)).getAngle();
 
                 Point2D firstAnchorRotated = calcRotation(anchor.getX(), anchor.getY(), angle);
@@ -58,10 +58,11 @@ public class Validator {
 
                 boolean isImageOutOfGrid = imgStartX < 0 || imgStartY < 0 ||
                                            rowIndex >= squares.length || colIndex >= squares[0].length;
+                if (isImageOutOfGrid) return false;
 
                 boolean overlappingConnector = (squares[rowIndex][colIndex] != null && squares[rowIndex][colIndex] != connector);
 
-                if (isImageOutOfGrid || overlappingConnector) return false;
+                if (overlappingConnector) return false;
 
                 boolean secondAnchorIsBeforeFirst = (i == rowIndex) &&
                                 ((rowIndex % 2 == 0 && colIndex < j) ||

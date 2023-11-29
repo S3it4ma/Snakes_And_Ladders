@@ -65,7 +65,7 @@ public class BoardHandler {
 
     public void saveBoard(File file) {
         try {
-            new FileBoard(connectorPoints).write(configBoard, file);
+            new BoardWriter().write(configBoard, file);
         } catch (IOException e) {
             Alert errorAlert = new ErrorAlert(ErrorAlert.TYPE.WRITING_ERROR);
             errorAlert.showAndWait();
@@ -79,7 +79,7 @@ public class BoardHandler {
     }
 
     public void createBoardFromFile(File file) throws Exception {
-        Board newBoard = new FileBoard(connectorPoints).read(file);
+        Board newBoard = new BoardReader(connectorPoints).read(file);
         parent.setCenter(newBoard);
     }
 

@@ -17,7 +17,6 @@ public class Connector extends AnchorableImage {
     * */
 
     private Point2D secondAnchor;
-    //private boolean secondPointAnchored=false;
 
     public Connector(Point2D firstAnchor, Point2D secondAnchor, Image img) {
         super(firstAnchor, img);

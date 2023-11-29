@@ -4,33 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="First deliverable">
+    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="version 1 completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/appState/sidebarState/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/sidebarState/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/AnchorableImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/AnchorableImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/DragAndResize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/DragAndResize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/DroppedOnBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/DroppedOnBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/FileBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/FileBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/Main3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/board/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/board/FileBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/BoardReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/board/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/code.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/LogicalBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/LogicalBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/todo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/Selected.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/divietoDiSosta.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/icons8-paint-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/notSelected.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/restartB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/restartR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/snake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/start.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icons/vittoria.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +27,7 @@
         <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -71,11 +53,13 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/ScreenBuilder/SceneBuilder.exe&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright.profiles&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -87,9 +71,74 @@
       <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources\savedConfigs" />
       <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources\icons" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="simulation" />
+      <recent name="board" />
+      <recent name="app" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="app" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.LogicalBoardTest.translate">
+    <configuration name="AnchorableImageTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SnakesAndLadder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="board" />
+      <option name="MAIN_CLASS_NAME" value="board.AnchorableImageTest" />
+      <option name="METHOD_NAME" value="testToString(board.AnchorableImage,java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogicalBoardTest.translate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SnakesAndLadder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="simulation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="simulation" />
+      <option name="MAIN_CLASS_NAME" value="simulation.LogicalBoardTest" />
+      <option name="METHOD_NAME" value="translate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidatorTest.isValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SnakesAndLadder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="board" />
+      <option name="MAIN_CLASS_NAME" value="board.ValidatorTest" />
+      <option name="METHOD_NAME" value="isValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LogicalBoardTest.translate" />
+        <item itemvalue="JUnit.AnchorableImageTest.testToString" />
+        <item itemvalue="JUnit.ValidatorTest.isValid" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700772868619</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="version 1 completed">
+      <created>1700849840809</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700849840809</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +252,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="First deliverable" />
-    <option name="LAST_COMMIT_MESSAGE" value="First deliverable" />
+    <MESSAGE value="version 1 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1 completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
