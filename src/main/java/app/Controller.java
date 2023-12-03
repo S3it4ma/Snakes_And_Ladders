@@ -244,6 +244,7 @@ public class Controller {
         simulationSNodes.add(numOfPlayersHBox);
         simulationSNodes.add(numOfPlayersChoiceBox);
         simulationSNodes.add(simulationVelocityHB);
+        simulationSNodes.add(simulationVelocity);
         simulationSNodes.add(textAreaSimul);
         simulationSNodes.add(stepManuale);
 
@@ -278,7 +279,6 @@ public class Controller {
         });
 
         numOfPlayersChoiceBox.setValue(5);
-        numOfPlayersChoiceBox.setId("numOfPlayersCB");
         textAreaSimul.setEditable(false);
         textAreaSimul.setWrapText(true);
 

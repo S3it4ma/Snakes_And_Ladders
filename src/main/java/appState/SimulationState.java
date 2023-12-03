@@ -13,11 +13,13 @@ import board.BoardHandler;
 import simulation.Simulation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SimulationState extends  AppState {
     private final Timeline timeline;
     private final Simulation simulation;
     private ChoiceBox<Integer> numOfPlayersCB;
+    private ChoiceBox<Double> velocityCB;
     private enum STATE {NULL, STARTED, STOPPED}
     private Button simulButton;
     private TextArea ta;
@@ -29,6 +31,7 @@ public class SimulationState extends  AppState {
             if (n instanceof TextArea) ta = (TextArea) n;
             else if (n.getId().equals("simulation")) simulButton = (Button) n;
             else if (n.getId().equals("numOfPlayersCB")) numOfPlayersCB = (ChoiceBox<Integer>) n;
+            else if (n.getId().equals("velocityCB")) velocityCB = (ChoiceBox<Double>) n;
         }
         simulation = s;
         simulation.setBoardHandler(boardHandler);
@@ -39,6 +42,7 @@ public class SimulationState extends  AppState {
                 handleSimulation();
             }
         }));
+        timeline.setRate(velocityCB.getValue());
         timeline.setCycleCount(Timeline.INDEFINITE);
     }
 
@@ -74,7 +78,6 @@ public class SimulationState extends  AppState {
                 handleSimulation();
             }
         }
-
     }
 
     private void handleSimulation() {

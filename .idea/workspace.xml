@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="version 1 completed">
+    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="tests and FileBoard split in BoardReader and BoardWriter.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Connector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/FileBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/BoardReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/board/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/board/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/board/ValidatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,20 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/ScreenBuilder/SceneBuilder.exe&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;copyright.profiles&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_directory_selection": "C:/Users/lenovo/IdeaProjects/SnakesAndLadder/src/main/java/app",
+    "last_opened_file_path": "C:/Users/lenovo/ScreenBuilder/SceneBuilder.exe",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "copyright.profiles"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lenovo\IdeaProjects\SnakesAndLadder\src\main\resources" />
@@ -83,7 +82,7 @@
       <recent name="app" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LogicalBoardTest.translate">
+  <component name="RunManager" selected="JUnit.ValidatorTest.isValid (1)">
     <configuration name="AnchorableImageTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SnakesAndLadder" />
       <extension name="coverage">
@@ -116,6 +115,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValidatorTest.isValid (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SnakesAndLadder" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="board.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="board" />
+      <option name="MAIN_CLASS_NAME" value="board.ValidatorTest" />
+      <option name="METHOD_NAME" value="isValid(board.Board,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ValidatorTest.isValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SnakesAndLadder" />
       <extension name="coverage">
@@ -134,8 +149,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LogicalBoardTest.translate" />
+        <item itemvalue="JUnit.ValidatorTest.isValid (1)" />
         <item itemvalue="JUnit.AnchorableImageTest.testToString" />
+        <item itemvalue="JUnit.LogicalBoardTest.translate" />
         <item itemvalue="JUnit.ValidatorTest.isValid" />
       </list>
     </recent_temporary>
@@ -177,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700849840809</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tests and FileBoard splitted in BoardReader and BoardWriter.">
+      <created>1701252164229</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701252164229</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +276,9 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="First deliverable" />
     <MESSAGE value="version 1 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1 completed" />
+    <MESSAGE value="tests and FileBoard splitted in BoardReader and BoardWriter." />
+    <MESSAGE value="tests and FileBoard split in BoardReader and BoardWriter." />
+    <option name="LAST_COMMIT_MESSAGE" value="tests and FileBoard split in BoardReader and BoardWriter." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
