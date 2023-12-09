@@ -102,8 +102,6 @@ public class Simulation {
         Player currentP = player[currentIndex];
         int squareToGo = currentP.getSquare() + number;
 
-        System.out.println(squareToGo + ": gio "+ currentIndex + " ha fatto "+currentDiceValue);
-
         if (squareToGo == squares.length) {
             currentP.setSquare(squareToGo);
             textArea.appendText(player[currentIndex].toString()+'\n');
