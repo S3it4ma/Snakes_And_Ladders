@@ -1,18 +1,17 @@
 package simulation;
 
 import board.*;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class LogicalBoard {
     private final Validator validator;
-    private final HashMap<String, CheckBox> list;
+    private final HashMap<String, Boolean> list;
     private final TextArea textArea;
     private Deck deck = null;
 
-    public LogicalBoard(Validator validator, HashMap<String, CheckBox> list, TextArea textArea) {
+    public LogicalBoard(Validator validator, HashMap<String, Boolean> list, TextArea textArea) {
         this.list = list;
         this.validator = validator;
         this.textArea = textArea;
@@ -41,28 +40,35 @@ public class LogicalBoard {
 
         boolean isDefaultConfiguration = (list == null);
 
-        if (isDefaultConfiguration) return new Simulation(squares, textArea, dice);
+        if (isDefaultConfiguration) {
+            Simulation s = new Simulation(squares, textArea, dice);
+            for (HandleStrategy handleStrategy: squares) handleStrategy.setSimulation(s);
+            return s;
+        }
 
         Simulation s;
 
-        if (list.get("Dado singolo").isSelected()) {
+        if (list.get("Dado singolo")) {
             dice = Simulation.Dice.SINGLE;
         }
 
         if (deck != null) {
-            if (list.get("Carta divieto di sosta").isSelected()) {
+            if (list.get("Carta divieto di sosta")) {
                 deck.addCard(new BlockStrategy());
             }
             s = new DeckSimulation(squares, textArea, dice, deck);
+            for (HandleStrategy handleStrategy : deck.getDeck()) handleStrategy.setSimulation(s);
         }
         else s = new Simulation(squares, textArea, dice);
 
-        if (list.get("Doppio sei").isSelected()) {
+        if (list.get("Doppio sei")) {
             s = new DoubleSixDecorator(s);
         }
-        if (list.get("Lancio finale").isSelected()) {
+        if (list.get("Lancio finale")) {
             s = new LastRollDecorator(s);
         }
+
+        for (HandleStrategy handleStrategy: squares) handleStrategy.setSimulation(s);
         return s;
     }
 

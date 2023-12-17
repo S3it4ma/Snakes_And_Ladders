@@ -1,6 +1,7 @@
 package simulation;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -9,6 +10,10 @@ public class Deck {
 
     public Deck(LinkedList<HandleStrategy> deck) {
         this.deck = deck;
+    }
+
+    public LinkedList<HandleStrategy> getDeck() {
+        return deck;
     }
 
     public void shuffleDeck() {
@@ -23,7 +28,7 @@ public class Deck {
 
     public void getCard(Simulation simulation) {
         HandleStrategy handleStrategy = deck.removeFirst();
-        handleStrategy.handle(simulation);
+        handleStrategy.handle();
         deck.addLast(handleStrategy);
     }
 

@@ -1,9 +1,9 @@
 package simulation;
 
-public class DiceStrategy implements HandleStrategy {
+public class DiceStrategy extends HandleStrategy {
 
     @Override
-    public void handle(Simulation simulation) {
+    public void handle() {
         simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
         simulation.manageRoll(simulation.rollDice());
     }

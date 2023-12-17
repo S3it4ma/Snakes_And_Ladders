@@ -25,14 +25,13 @@ public class PersonalizationState extends AppState {
     @Override
     public ApplicationState nextState(ArrayList<Node> sNodes) {
         if (boardHandler.validateBoard()) {
-            setNodes(false);
-
-            HashMap<String, CheckBox> choiceBoxHashMap = new HashMap<>();
+            HashMap<String, Boolean> choiceBoxHashMap = new HashMap<>();
             for (Node n : nodes) {
                 if (n instanceof CheckBox cb) {
-                    choiceBoxHashMap.put(cb.getText(), cb);
+                    choiceBoxHashMap.put(cb.getText(), cb.isSelected());
                 }
             }
+            setNodes(false);
 
             TextArea ta = null;
             for (Node n : sNodes) {

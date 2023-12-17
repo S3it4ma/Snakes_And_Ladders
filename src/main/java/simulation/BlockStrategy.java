@@ -1,8 +1,8 @@
 package simulation;
 
-public class BlockStrategy implements HandleStrategy {
+public class BlockStrategy extends HandleStrategy {
     @Override
-    public void handle(Simulation simulation) {
+    public void handle() {
         simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
         ((CardPlayer) simulation.getCurrentPlayer()).addCard();
     }

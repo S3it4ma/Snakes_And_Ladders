@@ -5,7 +5,6 @@ import app.ErrorAlert;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
@@ -160,8 +159,12 @@ public class BoardHandler {
         return new Validator(currentVisibleBoard).isValid();
     }
 
-    public Simulation prepareSimulation(HashMap<String, CheckBox> list, TextArea textArea) {
+    public Simulation prepareSimulation(HashMap<String, Boolean> list, TextArea textArea) {
         Board currentVisibleBoard = (Board) parent.getCenter();
+
+        if (currentVisibleBoard.getOnMouseClicked() != null)
+            ((DragAndResize) currentVisibleBoard.getOnMouseClicked()).activateBorder(false);
+
         Validator validator = new Validator(currentVisibleBoard);
 
         LogicalBoard logicalBoard = new LogicalBoard(validator, list, textArea);
@@ -187,7 +190,7 @@ public class BoardHandler {
         int rowIndex = (square - 1) / rows;
         int reversedRowIndex = rows - rowIndex - 1;
 
-        int colIndex = (square-1) - rowIndex * rows;
+        int colIndex = (square-1) - (rowIndex * rows);
         if (reversedRowIndex % 2 == 0) colIndex = columns - (colIndex + 1);
 
         gridPane.add(circle, colIndex, reversedRowIndex);

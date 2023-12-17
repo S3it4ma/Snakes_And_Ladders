@@ -1,8 +1,8 @@
 package simulation;
 
-public class NoStrategy implements HandleStrategy {
+public class NoStrategy extends HandleStrategy {
     @Override
-    public void handle(Simulation simulation) {
+    public void handle() {
 
     }
 }

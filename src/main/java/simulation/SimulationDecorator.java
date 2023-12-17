@@ -16,6 +16,11 @@ public class SimulationDecorator extends Simulation {
     @Override
     public void setPlayer(int n) {
         simulation.setPlayer(n);
+        for (Player p : simulation.getPlayer()) p.setSimulation(this);
+    }
+    @Override
+    protected Player[] getPlayer() {
+        return simulation.getPlayer();
     }
     @Override
     public void setBoardHandler(BoardHandler boardHandler) {
@@ -34,6 +39,14 @@ public class SimulationDecorator extends Simulation {
         simulation.manageRoll(number);
     }
     @Override
+    protected void setCurrentDiceValue(int currentDiceValue) {
+        simulation.setCurrentDiceValue(currentDiceValue);
+    }
+    @Override
+    protected HandleStrategy[] getSquares() {
+        return simulation.getSquares();
+    }
+    @Override
     public int rollDice() {
         return simulation.rollDice();
     }
@@ -47,6 +60,6 @@ public class SimulationDecorator extends Simulation {
     }
     @Override
     public int getCurrentDiceValue() {
-        return simulation.currentDiceValue;
+        return simulation.getCurrentDiceValue();
     }
 }

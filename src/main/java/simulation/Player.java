@@ -5,6 +5,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 public class Player {
+    protected Simulation simulation;
     protected int square = 1;
     protected Circle circle = new Circle();
     protected String name;
@@ -27,8 +28,11 @@ public class Player {
     public void setSquare(int square) {
         this.square = square;
     }
+    public void setSimulation(Simulation simulation) {
+        this.simulation = simulation;
+    }
 
-    public void play(Simulation simulation) {
+    public void play() {
         int n = simulation.rollDice();
         simulation.manageRoll(n);
     }

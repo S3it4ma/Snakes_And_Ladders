@@ -57,6 +57,7 @@ public class Simulation {
         for (int i=0; i<n; i++) {
             WaitingPlayer p = new WaitingPlayer(""+i);
             p.setFill(list.remove(list.size()-1));
+            p.setSimulation(this);
             player[i] = p;
             boardHandler.movePlayer(p.getCircle(), 1);
         }
@@ -67,24 +68,32 @@ public class Simulation {
     public boolean hasPlayerWon() {
         return playerWin;
     }
-    public int getCurrentDiceValue() {
+    int getCurrentDiceValue() {
         return currentDiceValue;
     }
-    public Player getCurrentPlayer() {
+    protected void setCurrentDiceValue(int currentDiceValue) {
+        this.currentDiceValue = currentDiceValue;
+    }
+    protected Player[] getPlayer() {
+        return player;
+    }
+    protected HandleStrategy[] getSquares() {
+        return squares;
+    }
+    Player getCurrentPlayer() {
         return player[currentIndex];
     }
 
     public void simulationStep() {
-        player[currentIndex].play(this);
+        player[currentIndex].play();
 
         if (playerWin) {
-            textArea.appendText("Il giocatore "+player[currentIndex].getName()+" ha vinto!!\n");
-            Player currentP = player[currentIndex];
-            boardHandler.movePlayer(currentP.getCircle(), currentP.getSquare());
+            show("Il giocatore "+player[currentIndex].getName()+" ha vinto!!\n");
         }
 
         currentIndex = (currentIndex+1)%player.length;
     }
+
 
     public int rollDice() {
         currentDiceValue = dice.rollDice();
@@ -98,7 +107,6 @@ public class Simulation {
     }
 
     public void manageRoll(int number) {
-
         Player currentP = player[currentIndex];
         int squareToGo = currentP.getSquare() + number;
 
@@ -117,6 +125,6 @@ public class Simulation {
         currentP.setSquare(squareToGo);
         show(currentP.toString());
 
-        squares[squareToGo-1].handle(this);
+        squares[squareToGo-1].handle();
     }
 }

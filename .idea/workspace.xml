@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="Eliminated println" />
+    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="Eliminated println">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appState/AppState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/AppState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appState/PersonalizationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/PersonalizationState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appState/SavedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/SavedState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/appState/SimulationState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/board/BoardHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/BlockStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/BlockStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/CardPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/CardPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DiceStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DiceStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DoubleSixDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DoubleSixDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/HandleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/HandleStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/JumpStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/JumpStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/LastRollDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/LastRollDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/LogicalBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/LogicalBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/NoStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/NoStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/RandomStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/RandomStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/SimulationDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/SimulationDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/SpringStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/SpringStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/WaitingPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/WaitingPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/WaitingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/WaitingStrategy.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702119247780</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Eliminated println">
+      <created>1702396148270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702396148270</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

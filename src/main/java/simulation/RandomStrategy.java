@@ -1,8 +1,8 @@
 package simulation;
 
-public class RandomStrategy implements HandleStrategy {
+public class RandomStrategy extends HandleStrategy {
     @Override
-    public void handle(Simulation simulation) {
+    public void handle() {
         simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
         ((DeckSimulation) simulation).getDeckCard();
     }

@@ -1,6 +1,6 @@
 package simulation;
 
-public class WaitingStrategy implements HandleStrategy {
+public class WaitingStrategy extends HandleStrategy {
     private final int turnsToWait;
 
     public WaitingStrategy(int t) {
@@ -8,9 +8,14 @@ public class WaitingStrategy implements HandleStrategy {
     }
 
     @Override
-    public void handle(Simulation simulation) {
-        simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
-        ((WaitingPlayer) simulation.getCurrentPlayer()).setTurnsToWait(turnsToWait);
+    public void handle() {
+        Player currentP = simulation.getCurrentPlayer();
+
+        simulation.show("Giocatore "+currentP.getName()+this);
+        ((WaitingPlayer) currentP).setTurnsToWait(turnsToWait);
+
+        if (currentP instanceof CardPlayer cardPlayer && cardPlayer.getTurnsToWait()==0)
+            simulation.show("Il giocatore "+currentP.getName()+"Ha usato una carta dicìvieto di sosta");
     }
 
     @Override

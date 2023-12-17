@@ -2,6 +2,8 @@ package appState;
 
 import board.BoardHandler;
 import javafx.scene.Node;
+import javafx.scene.control.CheckBox;
+
 import java.util.ArrayList;
 
 public abstract class AppState implements ApplicationState {
@@ -20,6 +22,7 @@ public abstract class AppState implements ApplicationState {
         for (Node n : nodes) {
             n.setDisable(!flag);
             n.setVisible(flag);
+            if (n instanceof CheckBox cb) cb.setSelected(false);
         }
     }
 

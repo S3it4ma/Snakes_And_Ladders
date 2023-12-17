@@ -1,9 +1,9 @@
 package simulation;
 
-public class SpringStrategy implements HandleStrategy {
+public class SpringStrategy extends HandleStrategy {
 
     @Override
-    public void handle(Simulation simulation) {
+    public void handle() {
         simulation.show("Giocatore "+simulation.getCurrentPlayer().getName()+this);
         simulation.manageRoll(simulation.getCurrentDiceValue());
     }
