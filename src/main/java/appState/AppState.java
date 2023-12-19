@@ -18,7 +18,7 @@ public abstract class AppState implements ApplicationState {
     public String getSimulationButtonText() {
         return simulationButtonText;
     }
-    public void setNodes(boolean flag) {
+    protected void setNodes(boolean flag) {
         for (Node n : nodes) {
             n.setDisable(!flag);
             n.setVisible(flag);

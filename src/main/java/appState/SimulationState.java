@@ -101,7 +101,6 @@ public class SimulationState extends  AppState {
         switch (state) {
             case NULL -> {
                 initializeSimulation();
-                //System.out.println("instance "+(simulation instanceof DeckSimulation));
                 timeline.play();
                 state = STATE.STARTED;
                 simulationButtonText = "Stop";
