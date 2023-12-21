@@ -10,7 +10,7 @@ public class Simulation {
     protected int currentIndex;
     protected Player[] player;
     protected HandleStrategy[] squares;
-    protected Color[] color = {Color.WHITE, Color.BEIGE, Color.DARKGREY, Color.CYAN,
+    protected static Color[] color = {Color.WHITE, Color.BEIGE, Color.DARKGREY, Color.CYAN,
                                Color.PINK, Color.BLUE, Color.DARKMAGENTA, Color.DARKGOLDENROD,
                                Color.RED, Color.GREEN, Color.LIGHTCORAL, Color.DARKORANGE};
     protected ArrayList<Color> list;
