@@ -55,6 +55,7 @@ public class SimulationState extends  AppState {
     public ApplicationState nextState(ApplicationState s) {
         boardHandler.clearPlayers();
         timeline.stop();
+        boardHandler.makeBoardUnresponsive(false);
         setNodes(false);
         return s;
     }
