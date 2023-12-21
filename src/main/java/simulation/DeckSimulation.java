@@ -24,13 +24,13 @@ public class DeckSimulation extends Simulation {
         currentIndex = 0;
         for (int i=0; i<n; i++) {
             Player p = new CardPlayer(""+i);
-            p.setFill(list.remove(list.size()-1));
-            boardHandler.movePlayer(p.getCircle(), 1);
+            p.circle.setFill(list.remove(list.size()-1));
+            boardHandler.movePlayer(p.circle, 1);
             player[i] = p;
         }
     }
 
     void getDeckCard() {
-        deck.getCard(this);
+        deck.getCard();
     }
 }

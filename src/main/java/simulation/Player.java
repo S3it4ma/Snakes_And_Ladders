@@ -13,14 +13,8 @@ public class Player {
         this.name = name;
         circle.setStroke(Color.TRANSPARENT);
     }
-    public void setFill(Paint paint) {
-        circle.setFill(paint);
-    }
     public String getName() {
         return name;
-    }
-    public Circle getCircle() {
-        return circle;
     }
     public int getSquare() {
         return square;
@@ -32,7 +26,7 @@ public class Player {
         this.simulation = simulation;
     }
 
-    public void play() {
+    void play() {
         int n = simulation.rollDice();
         simulation.manageRoll(n);
     }

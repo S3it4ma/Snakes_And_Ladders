@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="After switching from SimulationState back to personalization board was still unresponsive. Fixed">
+    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="made color field in simulation static">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DeckSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DeckSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703186441398</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="made color field in simulation static">
+      <created>1703196595638</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703196595638</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,7 +331,8 @@
     <MESSAGE value="Eliminated println" />
     <MESSAGE value="Fixed major bug where SimulationDecorators caused severe problems in the simulation." />
     <MESSAGE value="After switching from SimulationState back to personalization board was still unresponsive. Fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="After switching from SimulationState back to personalization board was still unresponsive. Fixed" />
+    <MESSAGE value="made color field in simulation static" />
+    <option name="LAST_COMMIT_MESSAGE" value="made color field in simulation static" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

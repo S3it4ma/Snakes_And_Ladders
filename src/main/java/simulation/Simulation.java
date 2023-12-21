@@ -18,7 +18,7 @@ public class Simulation {
     protected int currentDiceValue;
     protected TextArea textArea;
     protected BoardHandler boardHandler;
-    enum Dice {
+    protected enum Dice {
         SINGLE (1, 6),
         DOUBLE (2, 12);
 
@@ -56,10 +56,10 @@ public class Simulation {
         player = new Player[n];
         for (int i=0; i<n; i++) {
             WaitingPlayer p = new WaitingPlayer(""+i);
-            p.setFill(list.remove(list.size()-1));
+            p.circle.setFill(list.remove(list.size()-1));
             p.setSimulation(this);
             player[i] = p;
-            boardHandler.movePlayer(p.getCircle(), 1);
+            boardHandler.movePlayer(p.circle, 1);
         }
     }
     public void setBoardHandler(BoardHandler boardHandler) {
@@ -103,7 +103,7 @@ public class Simulation {
     public void show(String text) {
         textArea.appendText(text+"\n");
         Player currentP = player[currentIndex];
-        boardHandler.movePlayer(currentP.getCircle(), currentP.getSquare());
+        boardHandler.movePlayer(currentP.circle, currentP.getSquare());
     }
 
     public void manageRoll(int number) {

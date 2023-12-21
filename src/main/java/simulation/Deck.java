@@ -26,7 +26,7 @@ public class Deck {
         }
     }
 
-    public void getCard(Simulation simulation) {
+    public void getCard() {
         HandleStrategy handleStrategy = deck.removeFirst();
         handleStrategy.handle();
         deck.addLast(handleStrategy);
