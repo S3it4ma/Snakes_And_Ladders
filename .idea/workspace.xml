@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="made color field in simulation static">
+    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="corrected minor issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DeckSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DeckSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/DoubleSixDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/DoubleSixDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simulation/LastRollDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simulation/LastRollDecorator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703196595638</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="corrected minor issues">
+      <created>1703201106717</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703201106717</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,7 +337,8 @@
     <MESSAGE value="Fixed major bug where SimulationDecorators caused severe problems in the simulation." />
     <MESSAGE value="After switching from SimulationState back to personalization board was still unresponsive. Fixed" />
     <MESSAGE value="made color field in simulation static" />
-    <option name="LAST_COMMIT_MESSAGE" value="made color field in simulation static" />
+    <MESSAGE value="corrected minor issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected minor issues" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

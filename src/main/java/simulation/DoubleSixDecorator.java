@@ -10,6 +10,10 @@ public class DoubleSixDecorator extends SimulationDecorator {
     @Override
     public void manageRoll(int n) {
         super.manageRoll(n);
+        checkForTwelve();
+    }
+
+    private void checkForTwelve() {
         if (simulation.getCurrentDiceValue() == 12 && maxRoll > 0) {
             String text = "Il giocatore "+getCurrentPlayer().getName()+" ha fatto 12! Ritira i dadi";
             show(text);
