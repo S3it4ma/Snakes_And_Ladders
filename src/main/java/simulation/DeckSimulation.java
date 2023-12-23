@@ -16,18 +16,8 @@ public class DeckSimulation extends Simulation {
     }
 
     @Override
-    public void setPlayer(int n) {
-        list = new ArrayList<>(Arrays.asList(color));
-        Collections.shuffle(list);
-
-        player = new Player[n];
-        currentIndex = 0;
-        for (int i=0; i<n; i++) {
-            Player p = new CardPlayer(""+i);
-            p.circle.setFill(list.remove(list.size()-1));
-            boardHandler.movePlayer(p.circle, 0);
-            player[i] = p;
-        }
+    protected Player factory(String name) {
+        return new CardPlayer(name);
     }
 
     void getDeckCard() {

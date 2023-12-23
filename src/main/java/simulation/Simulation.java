@@ -48,6 +48,10 @@ public class Simulation {
         this.playerWin = playerWin;
     }
 
+    protected Player factory(String name) {
+        return new WaitingPlayer(name);
+    }
+
     public void setPlayer(int n) {
         list = new ArrayList<>(Arrays.asList(color));
         Collections.shuffle(list);
@@ -55,7 +59,7 @@ public class Simulation {
         currentIndex = 0;
         player = new Player[n];
         for (int i=0; i<n; i++) {
-            WaitingPlayer p = new WaitingPlayer(""+i);
+            Player p = factory(""+i);
             p.circle.setFill(list.remove(list.size()-1));
             p.setSimulation(this);
             player[i] = p;
