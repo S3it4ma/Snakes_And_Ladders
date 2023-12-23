@@ -118,7 +118,7 @@ public class Controller {
 
         try {
             boardHandler.saveBoard(selectedFile);
-        } catch (IOException e) {
+        } catch (Exception e) {
             Alert errorAlert = new ErrorAlert(ErrorAlert.TYPE.WRITING_ERROR);
             errorAlert.showAndWait();
         }
