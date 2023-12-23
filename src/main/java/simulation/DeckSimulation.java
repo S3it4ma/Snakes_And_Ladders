@@ -25,7 +25,7 @@ public class DeckSimulation extends Simulation {
         for (int i=0; i<n; i++) {
             Player p = new CardPlayer(""+i);
             p.circle.setFill(list.remove(list.size()-1));
-            boardHandler.movePlayer(p.circle, 1);
+            boardHandler.movePlayer(p.circle, 0);
             player[i] = p;
         }
     }

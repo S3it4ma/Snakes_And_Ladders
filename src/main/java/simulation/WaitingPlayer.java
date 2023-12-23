@@ -12,7 +12,7 @@ public class WaitingPlayer extends Player {
     }
 
     @Override
-    public void play() {
+    void play() {
         if (turnsToWait>0) {
             turnsToWait--;
             simulation.show("Il giocatore "+name+" salta il turno, "+turnsToWait+" rimanenti.");

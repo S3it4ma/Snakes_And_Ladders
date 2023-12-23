@@ -15,7 +15,7 @@ public class WaitingStrategy extends HandleStrategy {
         ((WaitingPlayer) currentP).setTurnsToWait(turnsToWait);
 
         if (currentP instanceof CardPlayer cardPlayer && cardPlayer.getTurnsToWait()==0)
-            simulation.show("Il giocatore "+currentP.getName()+"Ha usato una carta dicìvieto di sosta");
+            simulation.show("Il giocatore "+currentP.getName()+"Ha usato una carta divieto di sosta");
     }
 
     @Override

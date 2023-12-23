@@ -59,7 +59,7 @@ public class Simulation {
             p.circle.setFill(list.remove(list.size()-1));
             p.setSimulation(this);
             player[i] = p;
-            boardHandler.movePlayer(p.circle, 1);
+            boardHandler.movePlayer(p.circle, 0);
         }
     }
     public void setBoardHandler(BoardHandler boardHandler) {
@@ -103,7 +103,7 @@ public class Simulation {
     public void show(String text) {
         textArea.appendText(text+"\n");
         Player currentP = player[currentIndex];
-        boardHandler.movePlayer(currentP.circle, currentP.getSquare());
+        boardHandler.movePlayer(currentP.circle, currentP.getSquare()-1);
     }
 
     public void manageRoll(int number) {

@@ -187,10 +187,10 @@ public class BoardHandler {
 
         gridPane.getChildren().remove(circle);
 
-        int rowIndex = (square - 1) / rows;
+        int rowIndex = square / columns;
         int reversedRowIndex = rows - rowIndex - 1;
 
-        int colIndex = (square-1) - (rowIndex * rows);
+        int colIndex = square - (rowIndex * columns);
         if (reversedRowIndex % 2 == 0) colIndex = columns - (colIndex + 1);
 
         gridPane.add(circle, colIndex, reversedRowIndex);
