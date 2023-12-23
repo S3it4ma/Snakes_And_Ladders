@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,13 +111,19 @@ public class Controller {
         FileChooser fc = new FileChooser();
         fc.setTitle("Scegli la configurazione salvata");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
-        fc.setInitialDirectory(new File(System.getProperty("user.dir")+"\\src\\main\\resources\\savedConfigs"));
+        fc.setInitialDirectory(new File(System.getProperty("user.home")));
         Stage currentStage = (Stage) salva.getScene().getWindow();
 
         File selectedFile = fc.showSaveDialog(currentStage);
 
-        boardHandler.saveBoard(selectedFile);
+        try {
+            boardHandler.saveBoard(selectedFile);
+        } catch (IOException e) {
+            Alert errorAlert = new ErrorAlert(ErrorAlert.TYPE.WRITING_ERROR);
+            errorAlert.showAndWait();
+        }
     }
+
     @FXML
     void creaCasella(MouseEvent event) {
         boardHandler.createSquare((ImageView) event.getSource(), event);
@@ -142,7 +149,7 @@ public class Controller {
         FileChooser fc = new FileChooser();
         fc.setTitle("Scegli la configurazione salvata");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
-        fc.setInitialDirectory(new File(System.getProperty("user.dir")+"\\src\\main\\resources\\savedConfigs"));
+        fc.setInitialDirectory(new File(System.getProperty("user.home")));
         Stage currentStage = (Stage) textAreaSimul.getScene().getWindow();
 
         File selectedFile = fc.showOpenDialog(currentStage);

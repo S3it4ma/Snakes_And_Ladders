@@ -62,13 +62,8 @@ public class BoardHandler {
         parent.getCenter().setMouseTransparent(flag);
     }
 
-    public void saveBoard(File file) {
-        try {
-            new BoardWriter().write(configBoard, file);
-        } catch (IOException e) {
-            Alert errorAlert = new ErrorAlert(ErrorAlert.TYPE.WRITING_ERROR);
-            errorAlert.showAndWait();
-        }
+    public void saveBoard(File file) throws IOException {
+        new BoardWriter().write(configBoard, file);
     }
 
     public void createNewGrid(int rows, int columns) {

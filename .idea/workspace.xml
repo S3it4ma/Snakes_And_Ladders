@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment="fixed big issue involving movePlayers() method">
+    <list default="true" id="269b5fd7-efe4-4dba-9560-e3681ce62342" name="Changes" comment=".jar artifact and icon updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_directory_selection": "C:/Users/lenovo/IdeaProjects/SnakesAndLadder/src/main/java/app",
-    "last_opened_file_path": "C:/Users/lenovo/javafx-sdk-20.0.2/bin/vcruntime140_1.dll",
+    "last_opened_file_path": "C:/Users/lenovo/IdeaProjects/SnakesAndLadder/out/artifacts/SnakesAndLadder_jar",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15755208",
     "project.structure.side.proportion": "0.19504644",
@@ -85,7 +85,7 @@
       <recent name="app" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Scale e serpenti">
+  <component name="RunManager">
     <configuration name="AnchorableImageTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SnakesAndLadder" />
       <extension name="coverage">
@@ -288,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703292213555</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=".jar artifact and icon updated">
+      <created>1703337542427</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703337542427</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,7 +381,8 @@
     <MESSAGE value="corrected minor issues" />
     <MESSAGE value="some refactoring" />
     <MESSAGE value="fixed big issue involving movePlayers() method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed big issue involving movePlayers() method" />
+    <MESSAGE value=".jar artifact and icon updated" />
+    <option name="LAST_COMMIT_MESSAGE" value=".jar artifact and icon updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

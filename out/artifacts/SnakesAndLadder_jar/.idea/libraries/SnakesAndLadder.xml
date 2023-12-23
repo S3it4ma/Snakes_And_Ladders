@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SnakesAndLadder">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SnakesAndLadder.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
